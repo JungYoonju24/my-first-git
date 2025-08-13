@@ -29,7 +29,7 @@ updateSize();
 // 브라우저 창 크기 변할 때마다 canvas 크기도 자동 조절 이벤트
 window.addEventListener('resize', updateSize);
 
-const radius = 420; //원형 반지름, 크기 조절
+const radius = 445; //원형 반지름, 크기 조절
 let angle = 0; //회전 각도 rad 단위, angle은 원을 계속 회전시키기 위한 변수
 let showNoise = true; // 노이즈 표시 여부
 
@@ -114,7 +114,7 @@ draw();
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#blobCanvas", {
-  scale: 1.7, //intro 확대 조절
+  scale: 1.9, //intro 확대 조절
   ease: "power2.out",
   // NEW: transformOrigin 명시 (가운데 기준 확대)
   transformOrigin: "50% 50%",
