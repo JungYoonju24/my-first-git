@@ -114,7 +114,7 @@ draw();
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#blobCanvas", {
-  scale: 1.9, //intro 확대 조절
+  scale: 1.5, //intro 확대 조절
   ease: "power2.out",
   // NEW: transformOrigin 명시 (가운데 기준 확대)
   transformOrigin: "50% 50%",
@@ -584,6 +584,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!btn || !footer) return;
 
+  // 📌 푸터 진입 시 버튼 보이기
   const io = new IntersectionObserver((entries) => {
     const entry = entries[0];
     if (entry.isIntersecting) {
@@ -591,14 +592,25 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       btn.classList.remove('show');
     }
-  }, { threshold: 0 }); // footer가 보이는 순간 show
+  }, { threshold: 0 });
 
   io.observe(footer);
 
+  // ✅ Top 버튼 클릭 시 느리게 스크롤
   btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+      window.lenis.scrollTo(0, {
+        duration: 5.5, // ← 원하는 속도 조절 (더 느리게 하면 3~4도 가능)
+        easing: t => 1 - Math.pow(1 - t, 4) // ← 스르륵 감속 느낌
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   });
+  
 });
+
+
 
 
 
