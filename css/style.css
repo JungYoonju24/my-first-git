@@ -26,7 +26,7 @@ html { scroll-behavior: auto; } /* 브라우저 기본 스무스 꺼야 Lenis랑
 body {background-color: #000; color: #fff; font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: -2%;}
 .innerheader, .innervisual, .innerintro {width: 90%; margin: 0 auto; position: relative;}
 .inner {width: 80%; margin: 0 auto; position: relative;}
-.inner { border: solid 1px palevioletred;}
+/* .inner { border: solid 1px palevioletred;} */
 
 .en {font-family: "Pretendard Variable", sans-serif; letter-spacing: 0px;}
 .enn {font-family: "Noto Serif Display", serif; font-style: italic;}
@@ -247,9 +247,9 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .profile .inner .container .left img {width: 100%; filter: brightness(90%);}
 
 .profile .inner .container .right {width: 60%; margin-top: 20px;}
-.profile .inner .container .right .subtitle {font-size: 22px;}
-.profile .inner .container .right .year {font-size: 17px; color: #a3a3a3;}
-.profile .inner .container .right .text {font-size: 17px;}
+.profile .inner .container .right .subtitle {font-size: 23px;}
+.profile .inner .container .right .year {font-size: 18px; color: #a3a3a3;}
+.profile .inner .container .right .text {font-size: 19px;}
 .profile .inner .container .right .box {display: flex; gap: 15px;}
 .profile .inner .container .right .box li {margin-bottom: 10px;}
 .profile .inner .container .right span.line {display: inline-block; width: 350px; height: 1px; background: #fff; vertical-align: middle; margin: 18px 0 15px 0;}
@@ -551,7 +551,7 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .works .inner .role .title {font-size: 33px; font-weight: 500; margin-bottom: 8px;}
 .works .inner .role .percent {font-size: 23px;}
 
-.works .inner .role .right {font-size: 17px; color: #a3a3a3;width: 55%;}
+.works .inner .role .right {font-size: 20px; color: #a3a3a3;width: 55%;}
 .works .inner .role .right li {
   position: relative;          /* ::before 위치 기준점 */
   padding-left: 18px;          /* 텍스트가 점과 겹치지 않도록 여백 확보 */
@@ -566,7 +566,7 @@ header .innerheader .menu a.d {margin-right: 0px;}
   border-radius: 50%;          /* 완전한 원으로 만들기 */
 }
 
-
+.works .inner .white {color: #fff; font-weight: 500;}
 
 
 
