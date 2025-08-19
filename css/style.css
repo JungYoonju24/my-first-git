@@ -250,7 +250,7 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .profile .inner .container .right .subtitle {font-size: 23px;}
 .profile .inner .container .right .year {font-size: 18px; color: #a3a3a3;}
 .profile .inner .container .right .text {font-size: 18px;}
-.profile .inner .container .right .box {display: flex; gap: 15px;}
+.profile .inner .container .right .box {display: flex; gap: 15px;align-items: center;  }
 .profile .inner .container .right .box li {margin-bottom: 10px;}
 .profile .inner .container .right span.line {display: inline-block; width: 370px; height: 1px; background: #fff; vertical-align: middle; margin: 18px 0 15px 0;}
 
@@ -261,7 +261,6 @@ header .innerheader .menu a.d {margin-right: 0px;}
 
 .profile .inner .info {font-size: 20px; display: inline-block; margin-top: 20px;}
 .profile .inner .info li {margin-bottom: 10px;}
-
 
 
 
@@ -523,7 +522,7 @@ header .innerheader .menu a.d {margin-right: 0px;}
 /* works */
 .works .inner {height: 100%;}
 .works .nuvie {margin-top: 200px;}
-.works .nuvie, .works .sm, .works .albamon {margin-bottom: 300px;}
+.works .nuvie, .works .sm, .works .albamon {margin-bottom: 400px;}
 
 .works .inner .top {margin-bottom: 65px;}
 .works .inner .top .num {font-size: 59px; margin-bottom: 5px;}
@@ -534,7 +533,7 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .works .inner .top .title .button a {border: solid 1px #fff; border-radius: 50px; padding: 8px 20px;}
 .works .inner .top .title .button .site {margin-right: 4px;}
 
-.works .inner .bottom {font-size: 18px; color: #a3a3a3; line-height: 2.1; margin-bottom: 65px;}
+.works .inner .bottom {font-size: 18px; color: #a3a3a3; line-height: 2.1; margin-bottom: 80px;}
 
 .works .inner .mainimg {width: 100%; position:relative; overflow:hidden;}
 .works .inner .mainimg img {width: 100%; }
@@ -543,7 +542,7 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .works .inner .hover-target:hover .mainimg video.preview{opacity:1; }
 .works .inner .hover-target {display: block;}
 
-.works .inner .role {margin-top: 20px;}
+.works .inner .role {margin-top: 40px;}
 .works .inner .role .planning, .works .inner .role .design {display: flex; justify-content: space-between; border-bottom: 0.5px solid #fff; padding: 30px 0;}
 .works .inner .role .coding {display: flex; justify-content: space-between; border-bottom: 0.6px solid #fff; padding: 30px 0;}
 
