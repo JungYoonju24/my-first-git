@@ -235,6 +235,18 @@ document.querySelectorAll(".some .imglist .draw").forEach((el, i) => {
 });
 
 
+//splitting.js
+$(function(){
+  Splitting();  //대문자로쓴다!!!
+});
+
+// motion
+$(function(){
+  $('.animate').scrolla({
+    mobile:true,
+    once:false // 여러 번 반복하려면 false, 한 번만이면 true
+  })
+})
 
 
 
@@ -284,22 +296,6 @@ gsap.to(".how-bg", {
     scrub: true,
     // markers: true  // 디버깅할 때만 주석 해제
   }
-});
-
-
-
-// 기본설정
-// motion
-$(function(){
-  $('.animate').scrolla({
-    mobile:true,
-    once:false
-  })
-})
-
-//splitting.js
-$(function(){
-  Splitting();  //대문자로쓴다!!!
 });
 
 
@@ -548,6 +544,35 @@ initMarquee(".marquee-track.bottom .marquee-text", -1); // 아랫줄: 왼쪽으�
 })();
 
 
+
+
+// work 작업물 등장
+document.addEventListener('DOMContentLoaded', () => {
+  // 효과를 줄 섹션들 선택
+  const sections = document.querySelectorAll('.works .nuvie, .works .sm, .works .albamon');
+
+  // IntersectionObserver 생성
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-up'); // 화면 들어오면 클래스 추가
+        io.unobserve(entry.target); // 👉 한 번만 실행되게 하려면 유지
+      }
+    });
+  }, {
+    threshold: 0.15,                 // 요소가 15% 보일 때 실행
+    rootMargin: '0px 0px -10% 0px'   // 화면 아래쪽 조금 남겨두고 트리거
+  });
+
+  // 각각 관찰 시작
+  sections.forEach(section => io.observe(section));
+});
+
+
+
+
+
+
 // coding 작업물 등장
 const items = document.querySelectorAll('.coding .worklist li');
 
@@ -638,7 +663,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 });
-
 
 
 

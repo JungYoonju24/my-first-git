@@ -26,7 +26,7 @@ html { scroll-behavior: auto; } /* 브라우저 기본 스무스 꺼야 Lenis랑
 body {background-color: #000; color: #fff; font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: -2%;}
 .innerheader, .innervisual, .innerintro {width: 90%; margin: 0 auto; position: relative;}
 .inner {width: 80%; margin: 0 auto; position: relative;}
-.inner { border: solid 1px palevioletred;}
+/* .inner { border: solid 1px palevioletred;} */
 
 .en {font-family: "Pretendard Variable", sans-serif; letter-spacing: 0px;}
 .enn {font-family: "Noto Serif Display", serif; font-style: italic;}
@@ -80,6 +80,46 @@ header .innerheader .menu a {margin-right: 30px;}
 header .innerheader .menu a.d {margin-right: 0px;}
 
 
+.menu a .char {
+  display: inline-block;
+  position: relative;
+  color: transparent; /* 원래 텍스트 숨김 */
+  overflow: hidden;
+}
+
+.menu a .char::before,
+.menu a .char::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(data-char);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition-delay: calc(30ms * var(--char-index));
+  color: #fff; /* 색상 통일 */
+}
+
+/* 기본: after가 보이고, before는 아래에 대기 */
+.menu a .char::before {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.menu a .char::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* hover 시: before 올라오고, after는 위로 사라짐 */
+.menu a:hover .char::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+.menu a:hover .char::after {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+
+
 /* visual */
 .visual {position: relative; overflow: hidden;}
 .visual .innervisual {height: 100vh; position: relative; z-index: 1;}
@@ -122,22 +162,29 @@ header .innerheader .menu a.d {margin-right: 0px;}
   }
 }
 
-
-/* 초기 상태 */
-.title.motion .char {
+/* 초기 상태: char 숨김 */
+.intro .title .char,
+.intro .title2 .char {
   opacity: 0;
   transform: translateY(20px);
+  display: inline-block;
 }
 
-/* 애니메이션 */
-.title.motion.animate .char {
+/* scrolla가 on 붙였을 때만 애니메이션 실행 */
+.intro .title.on .char {
   animation: fadeUp 0.4s ease forwards;
+  animation-delay: calc(var(--char-index) * 0.015s);
+}
+
+.intro .title2.on .char {
+  animation: fadeUp 0.8s ease forwards;
   animation-delay: calc(var(--char-index) * 0.015s);
 }
 
 @keyframes fadeUp {
   to {opacity: 1; transform: translateY(0);}
 }
+
 
 
 
@@ -583,6 +630,46 @@ padding: 0; margin: 0;}
 
 
 
+/* 초기 상태: 아래로 살짝 내려가 있고 투명 */
+.works .nuvie,
+.works .sm,
+.works .albamon {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+/* 보여줄 때 적용되는 클래스 */
+.reveal-up {
+  animation: revealUp .6s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+/* 안에 있는 주요 블록들을 살짝 시차로 */
+.reveal-up .top   { animation: childUp .55s ease-out .05s forwards; opacity:0; transform:translateY(16px); }
+.reveal-up .bottom{ animation: childUp .55s ease-out .12s forwards; opacity:0; transform:translateY(16px); }
+.reveal-up .role  { animation: childUp .55s ease-out .18s forwards; opacity:0; transform:translateY(16px); }
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes childUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 사용자가 감소된 모션을 선호하면 애니메이션 비활성화 (접근성) */
+@media (prefers-reduced-motion: reduce) {
+  .works .nuvie,
+  .works .sm,
+  .works .albamon,
+  .reveal-up .top, .reveal-up .bottom, .reveal-up .role {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
 
 /* maintitle clone */
 .titlepage_clone .inner {height: 100vh;}
@@ -625,8 +712,6 @@ padding: 0; margin: 0;}
   background-color: #fff;
   color: #100142;
 }
-
-
 
 .coding .worklist li {
   opacity: 0;
@@ -700,9 +785,9 @@ transition: max-height 0.6s ease;}
 
 .qna .inner .list .item .title {display: flex; justify-content: space-between; align-items: center; cursor: default; padding: 0 20px;}
 .qna .inner .list .item .title .question {font-size: 20px; font-weight: 400;}
-.qna .inner .list .item .answer {font-size: 18px; font-weight: 300; padding: 0 20px; line-height: 1.7;}
+.qna .inner .list .item .answer {font-size: 17px; font-weight: 300; padding: 0 20px; line-height: 1.7; }
 .qna .inner .list .item:hover {
-max-height: 320px;  /* 펼쳐질 최대 높이(답변 길이에 맞게 조절) */}
+max-height: 340px;  /* 펼쳐질 최대 높이(답변 길이에 맞게 조절) */}
 
 
 .qna .inner .list .item .icon { position: relative; width: 22px; height: 22px; }
@@ -810,6 +895,14 @@ max-height: 320px;  /* 펼쳐질 최대 높이(답변 길이에 맞게 조절) *
 }
 
 
+.footer .inner .buttonlist a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.footer .inner .buttonlist a:hover {
+  background-color: #fff;
+  color: #100142;
+}
 
 
 /* top */
