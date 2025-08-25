@@ -274,7 +274,7 @@ padding: 0; margin: 0;}
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* PC에서는 4개 고정 */
-  gap: 10px;
+  gap: 15px;
   justify-items: center;
   padding: 0;
   list-style: none;
@@ -491,7 +491,7 @@ padding: 0; margin: 0;}
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease, filter 0.6s ease;
-  filter: brightness(85%);
+  filter: brightness(83%);
   will-change: transform;
   display: block;
 }
@@ -543,14 +543,14 @@ padding: 0; margin: 0;}
   transition: all 0.3s ease;
 }
 .works .inner .button a:hover {
-  background-color: #80D5FF;
-  color: #fff;
+  background-color: #fff;
+  color: #100142;
 }
 
-.works .inner .bottom {font-size: 18px; color: #a3a3a3; line-height: 1.8; margin-bottom: 40px;}
+.works .inner .bottom {font-size: 18px; color: #a3a3a3; line-height: 1.8; margin-bottom: 50px;}
 
 .works .inner .mainimg {width: 100%; position:relative; overflow:hidden;}
-.works .inner .mainimg img {width: 100%; }
+.works .inner .mainimg img {width: 100%; filter: brightness(90%);}
 .works .inner .mainimg img, .works .inner .mainimg video {display:block; width:100%; height: 100%; border-radius:10px; object-fit: cover; }
 .works .inner .mainimg video.preview {position:absolute; inset:0; width:100%; height:100%; object-fit:cover ;opacity:0; transition: opacity 0.3s ease;pointer-events: auto;}
 .works .inner .hover-target:hover .mainimg video.preview{opacity:1; }
@@ -606,7 +606,7 @@ padding: 0; margin: 0;}
 .coding .worklist {display: flex; justify-content: space-between; flex-wrap: wrap;}
 .coding .worklist li {width: 45%; margin-top: 200px;}
 .coding .worklist li:nth-child(2n) {margin-top: 0;}
-.coding .worklist li a .imgbox img {width: 95%; filter: brightness(85%); transition: 0.3s;}
+.coding .worklist li a .imgbox img {width: 95%; filter: brightness(90%); transition: 0.3s;}
 
 .coding .worklist li a .imgbox img:hover {filter: brightness(45%);}
 
@@ -615,6 +615,35 @@ padding: 0; margin: 0;}
 .coding .worklist li .textbox .button {display: flex; margin-top: 10px;}
 .coding .worklist li .textbox .button .pc, .ta, .mo {border: solid 1px #fff; padding: 5px 13px; border-radius: 30px; margin-right: 3px;}
 .coding .worklist li .textbox .button .pc, .ta {margin-right: 7px;}
+
+.coding .inner .button a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.coding .inner .button a:hover {
+  background-color: #fff;
+  color: #100142;
+}
+
+
+
+.coding .worklist li {
+  opacity: 0;
+  transform: translateY(100px);
+  will-change: opacity, transform;
+}
+
+.coding .worklist li.show {
+  animation: fadeUp .5s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.05s);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 
 
 

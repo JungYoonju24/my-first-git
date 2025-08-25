@@ -457,6 +457,7 @@ initMarquee(".marquee-track.bottom .marquee-text", -1); // 아랫줄: 왼쪽으�
 
 
 
+
 // gallery
 (function initGalleryMarquee() {
   const gallery = document.querySelector('.gallery');
@@ -547,24 +548,26 @@ initMarquee(".marquee-track.bottom .marquee-text", -1); // 아랫줄: 왼쪽으�
 })();
 
 
+// coding 작업물 등장
+const items = document.querySelectorAll('.coding .worklist li');
 
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const el = entry.target;
+    if (entry.isIntersecting) {
+      // 리스트 내 순서를 css 변수로 주입 → 지연 자동 계산
+      const index = [...el.parentElement.children].indexOf(el);
+      el.style.setProperty('--i', index);
+      el.classList.add('show');
 
-
-// coding 작업물 하나씩 등장
-gsap.utils.toArray('.coding .worklist li').forEach((item, i) => {
-  gsap.from(item, {
-    scrollTrigger: {
-      trigger: item,
-      start: "top 100%", 
-      toggleActions: "play none none reverse",
-    },
-    y: 100, // 아래에서 위로 50px 이동
-    opacity: 0, // 투명도 0에서 시작
-    duration: 0.5,
-    ease: "power2.out",
-    delay: i * 0.2 // 순차적으로 등장
+      // 한 번만 재생하고 끝내기
+      io.unobserve(el);
+    }
   });
-});
+}, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+
+items.forEach(el => io.observe(el));
+
 
 
 
@@ -573,20 +576,16 @@ gsap.utils.toArray('.titlepage_process .circlelist li').forEach((item, i) => {
   gsap.from(item, {
     scrollTrigger: {
       trigger: item,
-      start: "top 100%", 
+      start: "top 80%",   // top이 화면의 80% 지점일 때 시작 (조금 늦게)
       toggleActions: "play none none reverse",
     },
-    y: 100, // 아래에서 위로 50px 이동
-    opacity: 0, // 투명도 0에서 시작
+    y: 80,                // 살짝 더 짧게 움직여도 자연스러움
+    opacity: 0,
     duration: 0.5,
     ease: "power2.out",
-    delay: i * 0.4 // 순차적으로 등장
+    delay: i * 0.2        // 0.5s → 0.2s 로 템포를 빠르게
   });
 });
-
-
-
-
 
 
 
@@ -771,7 +770,7 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches) lenis.stop();
 
 
 
-  // 로고 → 맨 위로
+  // 로고 클릭시 맨 위로
   const logo = document.querySelector('header .logo');
   if (logo) {
     logo.addEventListener('click', (e) => {
