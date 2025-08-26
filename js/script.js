@@ -235,18 +235,23 @@ document.querySelectorAll(".some .imglist .draw").forEach((el, i) => {
 });
 
 
-//splitting.js
+
+// splitting , scrolla
 $(function(){
-  Splitting();  //대문자로쓴다!!!
+  Splitting(); 
 });
+
+
 
 // motion
 $(function(){
   $('.animate').scrolla({
-    mobile:true,
-    once:false // 여러 번 반복하려면 false, 한 번만이면 true
+     mobile:true,
+     once:true
   })
 })
+
+
 
 
 
@@ -304,6 +309,8 @@ gsap.to(".how-bg", {
 $(document).on('click', 'a[href="#"]', function(e){
   e.preventDefault();
 });
+
+
 
 // header 영역 스크롤 방향 감지 이벤트
 $(function(){
@@ -383,35 +390,6 @@ $(function () {
   window.addEventListener("resize", refreshAll);
   window.addEventListener("load",   refreshAll);
 });
-
-
-
-
-// work video
-document.querySelectorAll('.hover-target').forEach(container => {
-  const video = container.querySelector('video.preview');
-  if (!video) return;
-
-  const play = () => {
-    video.currentTime = 0;
-    video.play().catch(() => {}); // safari에서 play 오류 방지
-  };
-  const stop = () => {
-    video.pause();
-    video.currentTime = 0;
-  };
-
-  container.setAttribute('tabindex', '0'); // 키보드 접근성
-  container.addEventListener('mouseenter', play);
-  container.addEventListener('mouseleave', stop);
-  container.addEventListener('focusin', play);
-  container.addEventListener('focusout', stop);
-  container.addEventListener('touchstart', play, { passive: true });
-  container.addEventListener('touchend', stop, { passive: true });
-});
-
-
-
 
 
 
@@ -546,28 +524,28 @@ initMarquee(".marquee-track.bottom .marquee-text", -1); // 아랫줄: 왼쪽으�
 
 
 
-// work 작업물 등장
-document.addEventListener('DOMContentLoaded', () => {
-  // 효과를 줄 섹션들 선택
-  const sections = document.querySelectorAll('.works .nuvie, .works .sm, .works .albamon');
+// work video
+document.querySelectorAll('.hover-target').forEach(container => {
+  const video = container.querySelector('video.preview');
+  if (!video) return;
 
-  // IntersectionObserver 생성
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-up'); // 화면 들어오면 클래스 추가
-        io.unobserve(entry.target); // 👉 한 번만 실행되게 하려면 유지
-      }
-    });
-  }, {
-    threshold: 0.15,                 // 요소가 15% 보일 때 실행
-    rootMargin: '0px 0px -10% 0px'   // 화면 아래쪽 조금 남겨두고 트리거
-  });
+  const play = () => {
+    video.currentTime = 0;
+    video.play().catch(() => {}); // safari에서 play 오류 방지
+  };
+  const stop = () => {
+    video.pause();
+    video.currentTime = 0;
+  };
 
-  // 각각 관찰 시작
-  sections.forEach(section => io.observe(section));
+  container.setAttribute('tabindex', '0'); // 키보드 접근성
+  container.addEventListener('mouseenter', play);
+  container.addEventListener('mouseleave', stop);
+  container.addEventListener('focusin', play);
+  container.addEventListener('focusout', stop);
+  container.addEventListener('touchstart', play, { passive: true });
+  container.addEventListener('touchend', stop, { passive: true });
 });
-
 
 
 
@@ -592,25 +570,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
 
 items.forEach(el => io.observe(el));
-
-
-
-
-// process 원형 하나씩 등장
-gsap.utils.toArray('.titlepage_process .circlelist li').forEach((item, i) => {
-  gsap.from(item, {
-    scrollTrigger: {
-      trigger: item,
-      start: "top 80%",   // top이 화면의 80% 지점일 때 시작 (조금 늦게)
-      toggleActions: "play none none reverse",
-    },
-    y: 80,                // 살짝 더 짧게 움직여도 자연스러움
-    opacity: 0,
-    duration: 0.5,
-    ease: "power2.out",
-    delay: i * 0.2        // 0.5s → 0.2s 로 템포를 빠르게
-  });
-});
 
 
 
