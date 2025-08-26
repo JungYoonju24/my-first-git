@@ -26,7 +26,7 @@ html { scroll-behavior: auto; } /* 브라우저 기본 스무스 꺼야 Lenis랑
 body {background-color: #000; color: #fff; font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: -2%;}
 .innerheader, .innervisual, .innerintro {width: 90%; margin: 0 auto; position: relative;}
 .inner {width: 80%; margin: 0 auto; position: relative;}
-/* .inner { border: solid 1px palevioletred;} */
+.inner { border: solid 1px palevioletred;}
 
 .en {font-family: "Pretendard Variable", sans-serif; letter-spacing: 0px;}
 .enn {font-family: "Noto Serif Display", serif; font-style: italic;}
@@ -156,21 +156,6 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .some .inner { height: 100vh; }
 .some .container { position: relative; height: 100%;}
 
-/* 타이틀: 겹칠 때 색 반전 느낌 */
-/* .some .inner h3.title {
-  font-size: 8vw;
-  font-weight: 400;
-  text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  white-space: nowrap;
-  z-index: 10;
-  color: #fff;
-  mix-blend-mode: difference;
-  pointer-events: none;
-} */
 
 /* 이미지 리스트: 하단 중앙 시작 */
 .some .imglist {
@@ -236,18 +221,37 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .how .inner .mydesign_kr {font-size: 18px; font-weight: 200; text-align: center; width: 100%; position: absolute; top: 90%; left: 50%; transform: translate(-50%, -90%); line-height: 1.5;}
 .how .inner .mydesign_kr span.blue {font-weight: 500; color: #80D5FF;}
 
-/* @keyframes slideup {
-  0%   { transform: translateY(100px); opacity: 0; }
-  30%  { transform: translateY(100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+@keyframes slideupslow {
+  0% {transform: translateY(50%); opacity: 0;}
+  30% {transform: translateY(50px); opacity: 0;}
 }
-.how .maintitle span.enn {animation-name: slideup; animation-duration: 1.5s; }
-.how .maintitle p.sub {animation-name: slideup; animation-duration: 1.7s;} */
+.how .maintitle .enn.motion {animation-name: slideupslow; animation-duration: 0.5s;}
+.how .maintitle .bottom.motion {animation-name: slideupslow; animation-duration: 0.5s;}
+
+
+
+
+@keyframes slideupslow2 {
+  0% {
+    transform: translateY(50%); opacity: 0;
+  }
+  30% {
+    transform: translateY(50px); opacity: 0;
+  }
+}
+
+.how .mydesign.motion {animation-name: slideupslow2; animation-duration: 0.7s;}
+.how .mydesign_kr.motion {animation-name: slideupslow2; animation-duration: 0.8s;}
+
+
+
+
 
 
 /* scroll */
 .scroll .inner {height: 100vh;}
 .scroll p.scroll {font-size: 15px; font-weight: lighter; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+
 
 
 /* profile */
@@ -273,6 +277,14 @@ padding: 0; margin: 0;}
 
 .profile .inner .info {font-size: 20px; display: inline-block; margin-top: 20px;}
 .profile .inner .info li {margin-bottom: 10px;}
+
+
+@keyframes slideupslow {
+  0% {transform: translateY(50%); opacity: 0;}
+  30% {transform: translateY(50px); opacity: 0;}
+}
+.profile .top.motion {animation-name: slideupslow; animation-duration: 0.5s;}
+.profile .bottom.motion {animation-name: slideupslow; animation-duration: 0.7s;}
 
 
 
@@ -441,6 +453,7 @@ padding: 0; margin: 0;}
   transform: scale(1.08); 
   filter: brightness(95%);
 }
+
 
 
 
@@ -666,7 +679,6 @@ padding: 0; margin: 0;}
 
 
 
-
 /* process */
 .titlepage_process .inner {height: 150vh;}
 .titlepage_process .maintitle {font-size: 8vw; font-weight: normal; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -40%); width: 100%;} 
@@ -692,19 +704,6 @@ padding: 0; margin: 0;}
 .circlelist li:hover .text {opacity:1;}
 
 
-
-/* process */
-.process .inner {height: 100%; margin-top: 100px;}
-.process .inner .con {display: flex; justify-content: space-between; margin-bottom: 200px;}
-.process .inner .con .left {width: 40%; text-align: center; padding-top: 8%;}
-.process .inner .con .left .num {font-size: 50px;}
-.process .inner .con .left .title {font-size: 50px; font-weight: 500;}
-.process .inner .con .left .text {font-size: 16px; font-weight: 200; line-height: 1.6; margin-top: 8px;}
-
-.process .inner .con .right {width: 55%;}
-.process .inner .con .right img {width: 100%;}
-
-
 @keyframes slideupslow {
   0% {transform: translateY(50%); opacity: 0;}
   30% {transform: translateY(50px); opacity: 0;}
@@ -714,6 +713,19 @@ padding: 0; margin: 0;}
 .circlelist .what.motion {animation-name: slideupslow; animation-duration: 0.9s;}
 .circlelist .how.motion {animation-name: slideupslow; animation-duration: 1.1s;}
 
+
+/* process */
+.process .inner {height: 100%; margin-top: 100px;}
+.process .inner .con {margin-bottom: 180px; text-align: center;}
+.process .inner .con .textbox {margin-bottom: 50px;}
+
+.process .inner .con .num {font-size: 60px;}
+.process .inner .con .title {font-size: 60px; font-weight: 500;}
+.process .inner .con .text {font-size: 16px; font-weight: 200; line-height: 1.6; margin-top: 8px;}
+
+.process .inner .con .imgbox {width: 90%; margin: 0 auto;}
+.process .inner .con .imgbox img {width: 95%; filter: brightness(90%);}
+.process .inner .con.ss .imgbox img {width: 70%;}
 
 
 
