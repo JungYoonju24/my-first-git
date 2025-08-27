@@ -576,6 +576,36 @@ items.forEach(el => io.observe(el));
 
 
 
+// coding 버튼
+document.addEventListener("DOMContentLoaded", () => {
+  // PC 버튼들
+  document.querySelectorAll(".button .pc").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(link.href, "_blank", "width=1920,height=1080");
+    });
+  });
+
+  // Tablet 버튼들
+  document.querySelectorAll(".button .ta").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(link.href, "_blank", "width=1024,height=768");
+    });
+  });
+
+  // Mobile 버튼들
+  document.querySelectorAll(".button .mo").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.open(link.href, "_blank", "width=390,height=844"); 
+      // iPhone 14 Pro 사이즈 예시
+    });
+  });
+});
+
+
+
 
 // mainvideo  scrolltrigger
 $(function(){
