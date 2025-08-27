@@ -26,11 +26,11 @@ html { scroll-behavior: auto; } /* 브라우저 기본 스무스 꺼야 Lenis랑
 body {background-color: #000; color: #fff; font-family: "Plus Jakarta Sans", sans-serif; letter-spacing: -2%;}
 .innerheader, .innervisual, .innerintro {width: 90%; margin: 0 auto; position: relative;}
 .inner {width: 80%; margin: 0 auto; position: relative;}
-.inner { border: solid 1px palevioletred;}
+/* .inner { border: solid 1px palevioletred;} */
 
 .en {font-family: "Pretendard Variable", sans-serif; letter-spacing: 0px;}
 .enn {font-family: "Noto Serif Display", serif; font-style: italic;}
-
+.white {color: #fff; font-weight: 500;}
 
 /* bg */
 .how-bg {
@@ -229,21 +229,22 @@ header .innerheader .menu a.d {margin-right: 0px;}
 .how .maintitle .bottom.motion {animation-name: slideupslow; animation-duration: 0.5s;}
 
 
-
-
-@keyframes slideupslow2 {
+@keyframes slideupslow3 {
   0% {
-    transform: translateY(50%); opacity: 0;
+    transform: translate(-50%, -90%) translateY(50px);
+    opacity: 0;
   }
-  30% {
-    transform: translateY(50px); opacity: 0;
+  100% {
+    transform: translate(-50%, -90%) translateY(0);
+    opacity: 1;
   }
 }
-
-.how .mydesign.motion {animation-name: slideupslow2; animation-duration: 0.7s;}
-.how .mydesign_kr.motion {animation-name: slideupslow2; animation-duration: 0.8s;}
-
-
+.how .mydesign.motion {
+  animation: slideupslow3 0.7s ease forwards;
+}
+.how .mydesign_kr.motion {
+  animation: slideupslow3 0.8s ease forwards;
+}
 
 
 
@@ -285,6 +286,31 @@ padding: 0; margin: 0;}
 }
 .profile .top.motion {animation-name: slideupslow; animation-duration: 0.5s;}
 .profile .bottom.motion {animation-name: slideupslow; animation-duration: 0.7s;}
+.profile .info.motion {animation-name: slideupslow; animation-duration: 0.7s;}
+
+
+.reveal-wrap {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.reveal-wrap img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  clip-path: inset(100% 0 0 0); /* 처음엔 위쪽 100% 잘려서 안 보임 */
+}
+
+.profile .left.motion .reveal-wrap img {
+  animation: revealImgUp 1s ease forwards;
+}
+
+@keyframes revealImgUp {
+  0%   { clip-path: inset(100% 0 0 0); opacity: 0; }
+  100% { clip-path: inset(0 0 0 0);    opacity: 1; }
+}
+
 
 
 
@@ -324,7 +350,15 @@ padding: 0; margin: 0;}
 .glass-box .text {font-size: 24px; text-align: center; font-weight: 400;}
 
 .skill-grid li:nth-child(5) img {max-width: 63px;}
-.skill-grid li:nth-child(7) img {max-width: 120px; padding: 20px 0 20px 0;}
+
+@keyframes slideupslow {
+  0%   { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.skill-grid .glass-box.motion {
+  animation: slideupslow 0.8s ease forwards;
+}
+
 
 
 
@@ -346,7 +380,8 @@ padding: 0; margin: 0;}
   width: 45%;
   position: absolute;
   left: 0;
-  z-index: 10;
+  z-index: 100;
+  pointer-events: auto;
 }
 
 .text-area {
@@ -383,7 +418,6 @@ padding: 0; margin: 0;}
   line-height: 1.5;
   margin-bottom: 20px;
   font-weight: 300;
-  opacity: 80%;
 }
 
 .text-slide .words .con {
@@ -394,6 +428,26 @@ padding: 0; margin: 0;}
   font-size: 17px;
   display: inline-block;
 }
+
+.text-slide .words .con:hover {background-color: #fff;
+  color: #100142;}
+
+
+  /* 겹침 방지: 비활성 슬라이드는 클릭/호버 막기 */
+.text-area .text-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;   /* ← 비활성 전부 이벤트 차단 */
+  z-index: 0;
+}
+
+.text-area .text-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;   /* ← 활성만 이벤트 허용 */
+  z-index: 2;             /* ← 활성 슬라이드를 최상단으로 */
+}
+
 
 .image-list {
   width: 60%;
@@ -555,7 +609,7 @@ padding: 0; margin: 0;}
 .works .inner .top .num {font-size: 59px; margin-bottom: 5px;}
 .works .inner .top .title {display: flex; justify-content: space-between; font-weight: 500; margin-bottom: 5px;}
 .works .inner .top .title .name {font-size: 67px;}
-.works .inner .top .name_kr {font-size: 18px; color: #A3A3A3; font-weight: 300;} 
+.works .inner .top .name_kr {font-size: 16px; color: #A3A3A3; font-weight: 300;} 
 .works .inner .top .title .button {font-size: 20px; padding-top: 42px;}
 .works .inner .top .title .button a {border: solid 1px #fff; border-radius: 50px; padding: 8px 20px;}
 .works .inner .top .title .button .site {margin-right: 4px;}
@@ -581,13 +635,13 @@ padding: 0; margin: 0;}
 
 .works .inner .role {margin-top: 40px;}
 .works .inner .role .planning, .works .inner .role .design {display: flex; justify-content: space-between; border-bottom: 0.5px solid #fff;}
-.works .inner .role .coding {display: flex; justify-content: space-between; border-bottom: 0.6px solid #fff;}
+.works .inner .role .coding, .works .inner .role .ai {display: flex; justify-content: space-between; border-bottom: 0.6px solid #fff;}
 
-.works .inner .role .left {text-align: right; width: 27%;  padding: 45px 0;}
+.works .inner .role .left {text-align: right; width: 30%;  padding: 45px 0;}
 .works .inner .role .title {font-size: 30px; font-weight: 500; margin-bottom: 8px;}
-.works .inner .role .percent {font-size: 23px;}
+.works .inner .role .percent {font-size: 19px; margin-top: 5px;}
 
-.works .inner .role .right {font-size: 20px; color: #a3a3a3;width: 60%;  padding: 30px 0;}
+.works .inner .role .right {font-size: 18px; color: #a3a3a3;width: 55%;  padding: 30px 0;}
 .works .inner .role .right li {
   position: relative;          /* ::before 위치 기준점 */
   padding-left: 18px;          /* 텍스트가 점과 겹치지 않도록 여백 확보 */
@@ -602,7 +656,7 @@ padding: 0; margin: 0;}
   border-radius: 50%;          /* 완전한 원으로 만들기 */
 }
 
-.works .inner .white {color: #fff; font-weight: 500;}
+
 
 @keyframes slideupslow {
   0% {transform: translateY(30px); opacity: 0;}
@@ -614,6 +668,7 @@ padding: 0; margin: 0;}
 .works .planning.motion {animation-name: slideupslow; animation-duration: 0.6s;}
 .works .design.motion {animation-name: slideupslow; animation-duration: 0.8s;}
 .works .coding.motion {animation-name: slideupslow; animation-duration: 1s;}
+.works .ai.motion {animation-name: slideupslow; animation-duration: 1.2s;}
 
 
 
@@ -628,7 +683,16 @@ padding: 0; margin: 0;}
 .titlepage_clone  .maintitle span.line {display: inline-block; width: 7vw; height: 0.7vw; background: #fff; vertical-align: middle; margin-top: 6%;}
 
 .titlepage_clone .subtitle {font-size: 18px; font-weight: 300; color: #a3a3a3; line-height: 1.7;  position: absolute; left: 15%; top: 68%; transform: translate(-15%, -68%);}
-.titlepage_clone .subtitle span.white {color: #fff; font-weight: 500;}
+
+@keyframes slideupslow2 {
+  0%   { transform: translate(-15%, -68%) translateY(50px); opacity: 0; }
+  100% { transform: translate(-15%, -68%) translateY(0);    opacity: 1; }
+}
+
+.titlepage_clone .subtitle.motion {
+  animation: slideupslow2 0.8s ease forwards;
+}
+
 
 
 /* scroll clone */
@@ -641,7 +705,7 @@ padding: 0; margin: 0;}
 .coding .worklist {display: flex; justify-content: space-between; flex-wrap: wrap;}
 .coding .worklist li {width: 45%; margin-top: 200px;}
 .coding .worklist li:nth-child(2n) {margin-top: 0;}
-.coding .worklist li a .imgbox img {width: 95%; filter: brightness(90%); transition: 0.3s;}
+.coding .worklist li a .imgbox img {width: 95%; filter: brightness(90%); transition: 0.3s; cursor: pointer;}
 
 .coding .worklist li a .imgbox img:hover {filter: brightness(45%);}
 
@@ -675,7 +739,6 @@ padding: 0; margin: 0;}
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
-
 
 
 
@@ -721,11 +784,30 @@ padding: 0; margin: 0;}
 
 .process .inner .con .num {font-size: 60px;}
 .process .inner .con .title {font-size: 60px; font-weight: 500;}
-.process .inner .con .text {font-size: 16px; font-weight: 200; line-height: 1.6; margin-top: 8px;}
+.process .inner .con .text {font-size: 16px; font-weight: 200; line-height: 1.6; margin-top: 8px; color: #a3a3a3;}
 
 .process .inner .con .imgbox {width: 90%; margin: 0 auto;}
 .process .inner .con .imgbox img {width: 95%; filter: brightness(90%);}
 .process .inner .con.ss .imgbox img {width: 70%;}
+
+
+/* 프로세스 섹션 이미지 기본 상태: 완전 숨김 + 아래에서 위로 드러나도록 클리핑 */
+.process .imgbox img {
+  width: 100%;
+  opacity: 0;
+  clip-path: inset(100% 0 0 0); /* 위쪽 100% 잘라서 안 보이게 */
+}
+
+/* .con에 motion 붙으면 이미지 리빌 시작 (스태거는 --d 커스텀 속성으로) */
+.process .con.motion .imgbox img {
+  animation: revealImgUp 1s ease forwards;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes revealImgUp {
+  0%   { clip-path: inset(100% 0 0 0); opacity: 0; }
+  100% { clip-path: inset(0 0 0 0);    opacity: 1; }
+}
 
 
 
@@ -742,7 +824,7 @@ max-height: 72px;        /* 처음엔 질문 줄 높이만 보이게 */
 transition: max-height 0.6s ease;}
 
 .qna .inner .list .item .title {display: flex; justify-content: space-between; align-items: center; cursor: default; padding: 0 20px;}
-.qna .inner .list .item .title .question {font-size: 20px; font-weight: 400;}
+.qna .inner .list .item .title .question {font-size: 20px; font-weight: 500;}
 .qna .inner .list .item .answer {font-size: 17px; font-weight: 300; padding: 0 20px; line-height: 1.7; }
 .qna .inner .list .item:hover {
 max-height: 340px;  /* 펼쳐질 최대 높이(답변 길이에 맞게 조절) */}
@@ -760,6 +842,7 @@ max-height: 340px;  /* 펼쳐질 최대 높이(답변 길이에 맞게 조절) *
 .qna .inner .list .item .answer { padding-top: 0; }
 .qna .inner .list .item .answer p {margin: 12px 0 4px; opacity: 0; transform: translateY(-6px); transition: opacity 0.5s ease, transform 0.5s ease, padding 1.5s ease;}
 .qna .inner .list .item:hover .answer p {opacity: 1; transform: translateY(0);}
+
 
 
 /* video */

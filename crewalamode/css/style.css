@@ -1,0 +1,224 @@
+@charset"utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Nanum+Myeongjo&display=swap');
+
+/*reset*/
+*{padding: 0; margin: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color:inherit; text-decoration: none;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+/* layouc */
+body {font-family: 'Nanum Myeongjo', serif; font-size: 14px; color: #333;}
+.wrap {width: 100%; position: relative; overflow: hidden;}
+
+
+/* header */
+header{width: 100%; position: fixed; background-color: #213135; top: 0; left: 0; padding: 40px 0 25px; color: #fff; font-family: 'Montserrat', sans-serif; font-weight: bold; text-align: center; text-transform: uppercase; transition: all 0.3s; z-index: 100;}
+header .inner {width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+header .inner .gnbbtn {display: block; width: 32px; height: 12px; position: relative; z-index: 300;}
+header .inner .gnbbtn span {background-color: #fff; display: block; width: 100%; height: 3px; position: absolute; left: 0; transition: all 0.3s;}
+header .inner .gnbbtn span.a {top: 0;} 
+header .inner .gnbbtn span.b {bottom: 0;} 
+header .inner .logo {font-size: 25px; letter-spacing: 1px; transition: all 0.4s;}
+header .inner .contact {font-size: 14px; transition: all 0.4s;}
+
+/* scroll event */
+header.on {padding: 20px 0 18px; transition: all 0.4s;}
+header.on .logo {font-size: 22px; letter-spacing: 5px; transition: all 0.4s; }
+header.on .gnbbtn, header.on .contact {margin-top: 4px; transition: all 0.4s;}
+header.on nav.gnb {width: 300px; transition: all 0.4s;}
+header.on nav.gnb ul {width: 50%; transition: all 0.4s;}
+header.on nav.gnb ul li a {font-size: 18px; transition: all 0.4s;}
+
+nav.gnb {background-color: #000; position: absolute; left: -1000px; top: 0; width: 0; height: 100vh; padding: 95px 50px; box-sizing: border-box; text-align: left; transition: all 0.7s;}
+nav.gnb ul {position: absolute; width: 60%; top: 50%; left: 50%; transform: translate(-50%,-50%); border-top: 1px solid #555; border-bottom: 1px solid #555; padding: 20px 0; }
+nav.gnb ul li a {text-align: left; line-height: 50px; font-size: 22px;}
+nav.gnb ul li a span {text-transform: none; font-family: 'Nanum Myeongjo', serif; font-style: italic;}
+nav.gnb.on {width: 400px; left: 0;}
+
+
+.contents {background-color: #fff; position: relative; z-index: 1; margin-bottom: 200px;}
+.contents .visual {width: 100vw; height: 100vh; position: relative;}
+.contents .visual .waves {width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;}
+.contents .visual .title {width: 100%; position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-family: 'Montserrat', sans-serif; text-align: center;  color: #fff; font-size: 70px; text-transform: uppercase; text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);}
+
+.inner {width: 1400px; margin: 0 auto;}
+.text .title {font-family: 'Montserrat', sans-serif; font-size: 15px; letter-spacing: 1px; text-transform: uppercase; font-weight: bold;}
+.text p {font-size: 35px; line-height: 1.2; margin: 40px 0;}
+.text a {display: inline-block; padding: 5px 15px; border: 1px solid #333; border-radius: 20px; font-size: 12px; font-family: 'Montserrat', sans-serif; font-weight: bold; letter-spacing: 1; text-transform: uppercase; transition: all 0.2s;}
+
+/* section about */
+.about {background-color: #f2f0eb; padding: 100px 0;}
+.about .inner .text p {font-size: 45px ;}
+
+/* section approach */
+.approach {padding: 100px 0;}
+.approach .inner {position: relative; }
+.approach .inner .list {width: 48%; }
+.approach .inner .list li {margin-bottom: 30px;}
+.approach .inner .list li:last-child {margin-bottom: 0;}
+.approach .inner .list li a {display: block; width: 100%; height: 100%; border-radius: 10px; overflow: hidden; position: relative;}
+.approach .inner .list li a span {display: none;}
+.approach .inner .list li a img {width: 100%;}
+.approach .inner .fix {position: absolute; right: 0; top: 0; width: 45%; height: 100%; }
+.approach .inner .fix .text {position: absolute; bottom: 10%; }
+
+/* scroll event */
+.approach .inner .fix .text.on {position: fixed; transition: all 0.4s; bottom: 40%; }
+.approach .inner .list li a.on:after, .approach .inner .list li a:hover::after {content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: rgba(41, 41, 41, 0.3);}
+.approach .inner .list li a.on span, .approach .inner .list li a:hover span {display: block; position: absolute; width: 100%; left: 0; top: 50%; transform: translateY(-50%); z-index: 1; text-align: center; color: #fff; font-size: 35px; font-style: italic;  }
+
+
+/* section sectors */
+.sectors {background-color: #f2f0eb; padding: 100px 0 230px; position: relative; margin-bottom: 260px;}
+.sectors .list {display: flex; justify-content: space-between; position: absolute; width: 1400px; left: 50%; transform: translateX(-50%); bottom: -160px;}
+.sectors .list li {width: 31%; border-radius: 10px; overflow: hidden;}
+.sectors .list li a {display: block; word-wrap: 100%; height: 100%; position: relative; }
+.sectors .list li a img {width: 100%; transition: all 0.5s;}
+.sectors .list li a h3 {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: #fff; font-size: 25px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; transition: all 0.4s;}
+.sectors .list li a:hover img, .sectors .list li a:focus img {transform: scale(1.2); transition: all 0.1s;}
+.sectors .list li a:hover h3, .sectors .list li a:focus h3 {letter-spacing: 4px; transition: all 0.5s;}
+
+/* section service */
+.service {padding: 100px 0;}
+.service .inner {display: flex; justify-content: space-between;}
+.service .inner .img {width: 48%; border-radius: 10px; overflow: hidden;}
+.service .inner .img img {width: 100%;}
+.service .inner .text {width: 45%; }
+
+/* section journal */
+.journal {background-color: #f2f0eb; padding: 350px 0 200px; margin-top: -250px; font-family: 'Montserrat', sans-serif;}
+.journal h2 {font-size: 30px; letter-spacing: 1px; text-transform: uppercase; text-align: center; margin-bottom: 100px;}
+.journal ul {display: flex; justify-content: space-between; }
+.journal ul li {width: 330px; }
+.journal ul li a {display: block; width: 100%; height: 100%;}
+.journal ul li a .img {border-radius: 10px; overflow: hidden; height: 330px;}
+.journal ul li a .img img {width: 100%; height: 100%;}
+.journal ul li a h3 {margin: 30px 0 ; font-size: 15px; letter-spacing: 1px; text-transform: uppercase;}
+.journal ul li a p {font-size: 16px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp:3; -webkit-box-orient: vertical; text-align: justify; overflow: hidden;}
+
+/* footer */
+footer {background-color: #213135; position: fixed; z-index: -1; left: 0; bottom: 0; width: 100%; color: #fff; height: 200px; padding: 75px 0; box-sizing: border-box;}
+footer .inner {display: flex; justify-content: space-between; font-family: 'Montserrat', sans-serif;}
+footer .inner .footerlogo {font-size: 50px; text-transform: uppercase; font-weight: bold; }
+footer .inner .contact {width: 30%; line-height: 1.4;}
+footer .inner .sns {display: flex; margin-top: 20px;}
+footer .inner .sns li {margin: 0 40px; font-weight: bold; font-size: 17px;}
+
+
+
+@keyframes slidedown{
+    0% {transform: translateY(-30px); opacity: 0;}
+    80% {transform: translateY(-30px); opacity: 0;}
+}
+.about .text.motion {animation-name: slidedown; animation-duration: 1s;}
+.approach .text.motion {animation-name: slidedown; animation-duration: 1s;}
+.sectors .text.motion {animation-name: slidedown; animation-duration: 1s;}
+.service .text.motion {animation-name: slidedown; animation-duration: 1s;}
+
+@keyframes slideleft{
+    0% {transform: translateX(-50px); opacity: 0;}
+    30% {transform: translateX(-50px); opacity: 0;}
+}
+.sectors ul.list.motion {animation-name: slideleft; animation-duration: 1.2s;} 
+
+@keyframes slideright{
+    0% {transform: translateX(-200px); opacity: 0;}
+    30% {transform: translateX(-200px); opacity: 0;}
+}
+.service .img.motion {animation-name: slideright; animation-duration: 1.2s;}
+
+@keyframes slideup{
+    0% {transform: translateY(100px); opacity: 0;}
+    30% {transform: translateY(100px); opacity: 0;}
+}
+.journal ul.list.motion li {animation-name: slideup; animation-duration: 1s;}
+.journal ul.list.motion li:nth-child(2) {animation-name: slideup; animation-duration: 1.2s;}
+.journal ul.list.motion li:nth-child(3) {animation-name: slideup; animation-duration: 1.4s;}
+.journal ul.list.motion li:nth-child(4) {animation-name: slideup; animation-duration: 1.6s;}
+
+
+@keyframes slideslow{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.visual h2.motion {animation-name: slideslow; animation-duration: 2s;}
+
+
+.motion .char { display: inline-block;
+    animation: slidedown 0.5s cubic-bezier(.10, 0, .10, 1) both;
+    animation-delay: calc(7ms * var(--char-index));}
+
+.motion .word { display: inline-block;
+    animation: slideslow 1.5s cubic-bezier(.10, 0, .10, 1) both;
+    animation-delay: calc(100ms * var(--char-index));}
+
+.motion .word { display: inline-block;
+    animation: slideup 1.5s cubic-bezier(.10, 0, .10, 1) both;
+    animation-delay: calc(60ms * var(--char-index));}
+
+
+/* 반응형 */
+/* 1400px~1025px */
+@media screen and (max-width:1400px){
+    .inner {width: 90%;}
+    .sectors .list {width: 90%;}
+    .journal .list li {width: 220px;}
+    .journal .list li a .img {height: 220px;}
+}
+
+/* 1024px~769px */
+@media screen and (max-width:1024px){
+    .contents {margin-bottom: 330px;}
+    .contents .visual .title {font-size: 50px;}
+    .about .inner .text p , .text p {font-size: 28px;}
+    .approach .inner .list {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+    .approach .inner .list li {width: 48.2%; margin-bottom: 20px;}
+    .approach .inner .fix {width: 100%; position: static; margin-bottom: 50px;}
+    .approach .inner .fix .text {position: static; }
+    .approach .inner {display: flex; flex-wrap: wrap; flex-direction: column-reverse;}
+    .sectors {padding: 100px 0 20%; margin-bottom: 15%;}
+    .sectors .list {bottom: -18%;}
+    .journal ul li {width: 187px; }
+    .journal ul li a .img {height: 187px;}
+    footer {height: 330px;}
+    footer .inner {flex-wrap: wrap; }
+    footer .inner .footerlogo {width: 100%; }
+    footer .inner .contact {width: 100%; margin: 20px 0 ; }
+    footer .inner .sns {width: 100%; justify-content: space-between;}
+    footer .inner .sns li {margin: 0;}
+} 
+
+/* 768px~501px */
+@media screen and (max-width:768px){
+    .service .inner {display: flex; flex-wrap: wrap; flex-direction: column-reverse;}
+    .service .inner .img {width: 100%;}
+    .service .inner .text {width: 100%; margin-bottom: 50px;}
+    .journal {padding: 30% 0 100px;}
+    .journal .list {flex-wrap: wrap;}
+    .journal ul li {width: 48.5%; margin-bottom: 20px;}
+    .journal ul li a .img {height: auto;}
+    .journal ul li a .img img {width: 100%; height: auto; }
+}
+
+/* 500px 이하 */
+@media screen and (max-width:500px){
+    header {padding: 20px 0 18px;}
+    header .inner .logo {font-size: 18px;}
+    header .inner .gnbbtn {width: 22px;}
+    header .inner .contact {opacity: 0;}
+    .contents .visual .title {font-size: 32px;}
+    .about .inner .text p, .text p {font-size: 22px}
+    .about, .approach {padding: 80px 0 85%;}
+    .about .inner .list li {width: 100%;}
+    .sectors .list {position: static; display: flex; flex-wrap: wrap; transform: translateX(0); width: 100%; }
+    .sectors .list li {width: 100%; margin-bottom: 30px;}
+    .sectors .inner .text {margin-bottom: 50px;}
+    .journal {margin-top: 0;}
+    .journal ul li {width: 100%; margin-bottom: 20px;}
+}
+

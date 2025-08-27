@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Noto+Sans+KR&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* 공통요소 */
+.inner {width: 1400px; margin: 0 auto;}
+.inner .title {text-align: center; }
+.inner .title h2 {font-size: 42px; margin-bottom: 10px; font-weight: normal;}
+.inner .title h2 .color {color: #ff8342; margin-left: 10px;}
+.inner .title p {font-size: 18px; margin-bottom: 50px; color: #555;}
+
+/* layout */
+body {font-family: 'Noto Sans KR', sans-serif; margin-bottom: 2000px;}
+.en {font-family: 'Exo 2', sans-serif;}
+.wrap {position: relative; margin: 0 auto; overflow: hidden;}
+header {background-color: rgba(2, 2, 2, 0.19); height: 100px; position: fixed; width: 100%;left: 0; top: 0; line-height: 100px;}
+.innerheader {width: 1600px; margin: 0 auto; display: flex; justify-content: space-between; color: #fff;}
+.innerheader .logo {width: 220px;}
+.innerheader nav {width: 87%; display: flex; justify-content: space-between;}
+.innerheader nav .gnb {width: 38%; display: flex; justify-content: space-between; }
+.innerheader nav .tnb {width: 38%; display: flex; justify-content: space-between;}
+.innerheader nav .tnb li:nth-child(1), .innerheader nav .tnb li:nth-child(2) {width: 33%;} 
+.innerheader nav .gnb li {width: 25%;  text-align: center;}
+.innerheader nav .gnb li a {display: block; width: 100%; height: 100%;}
+.innerheader nav .tnb li a {display: block; width: 100%; height: 100%;}
+.innerheader nav .tnb li a i {margin-right: 10px;}
+.innerheader nav .tnb li:last-child a {height: 35px; line-height: 35px; border: 1px solid #fff; padding: 0 0 10px 15px; border-radius: 20px; margin-top: 33px;}
+.innerheader nav .tnb li:last-child a i {margin-left: 10px;}
+
+.innerheader nav .gnb li a:hover, .innerheader nav .gnb li a:focus {color: orange;}
+.innerheader nav .tnb li:last-child a:hover, .innerheader nav .tnb li:last-child a:focus {background-color: #fff; color: orange;}
+
+/* visual */
+.visual {background: url(../img/vis_4.jpg) no-repeat center/cover; width: 100%; height: 100vh; background-attachment: fixed; }
+.visual .maintitle {width: 1024px; margin: 0 auto; padding-top: 330px; text-align: center; color: #fff;} 
+.visual .maintitle h2 {font-size: 55px; line-height: 1.1; margin-bottom: 30px;}
+.visual .maintitle p {font-size: 25px; margin-bottom: 30px;}
+.visual .maintitle .view {display: block;  width: 180px; margin: 0 auto; padding: 8px 0; border-radius: 40px; border: 1px solid #fff;}
+
+/* about */
+.about {padding: 80px 0;}
+.about .inner ul {display: flex;}
+.about .inner ul li a {display: block; width: 100% ; height: 100%;}
+.about .inner ul li .img {width: 100%; overflow: hidden;}
+.about .inner ul li .img img {width: 100%; transition: all 0.5s;}
+.about .inner ul li .txtbox {padding: 30px;}
+.about .inner ul li .txtbox h3 {font-size: 20px ; margin-bottom: 10px;}
+.about .inner ul li .txtbox p {font-size: 16px ; margin-bottom: 20px; }
+.about .inner ul li .txtbox p.more {text-transform: uppercase; font-weight: bold; padding-left: 40px; position: relative; }
+.about .inner ul li .txtbox p.more::before {content: '\f178'; position: absolute; font-family: 'fontAwesome'; left: 0; top: 0; width: 30px; height: 30px; background-color: #ff8342; line-height: 30px; border-radius: 50%;}
+
+.about .inner ul li a:hover .img img {transform: scale(1.4); }
+
+
+/* innovations */
+.innovations {padding: 100px 0 150px ; }
+.innovations .inner .imgbox {background: url(../img/product_1.jpg) no-repeat  center/cover; width: 100%; height: 540px; position: relative;} 
+.innovations .inner .imgbox .innerbox {background-color: #3a3c4e; width: 80%; position: absolute; left: 50%; bottom: -50px; transform: translateX(-50%);}
+.innovations .inner .imgbox .innerbox h3 {background-color: #fff; font-size: 18px; padding: 25px 45px; }
+.innovations .inner .imgbox .innerbox h3 span {color: #ff8342;}
+.innovations .inner .imgbox .bottom {display: flex; justify-content: space-between; padding: 35px 85px;}
+.innovations .inner .imgbox .bottom a {display: block; background-color: #ff8342; padding: 9px 30px 6px; border-radius: 50px; color: #fff;}
+
+/* me */
+.me {width: 100%; background: url(../img/me.jpg) no-repeat center/cover; padding: 80px 0; margin-bottom: 150px;}
+.me .inner ul.list {width: 100%;  border-top: 2px solid #000; border-bottom: 2px solid #000; }
+.me .inner ul.list > li {padding: 30px 60px;}
+.me .inner ul.list > li h3 {font-size: 18px; margin-bottom: 20px;}
+.me .inner ul.list > li h3 i {margin-right: 10px; color: #ff8342;}
+.me .inner ul.list > li > p {line-height: 1.6; margin-bottom: 20px; padding-left: 33px;}
+.me .inner ul.list > li .more {display: block; font-weight: bold; font-size: 14px; }
+.me .inner ul.list > li .in {margin-left: 33px;}
+.me .inner ul.list > li .in li {display: flex; margin-bottom: 10px;}
+.me .inner ul.list > li .in li em {width: 12%;}
+.me .inner ul.list > li .in li p {position: relative;}
+.me .inner ul.list > li .in li p::before {content: ''; position: absolute; left: -40px; top: 10px; width: 4px; height: 4px; border-radius: 50%; background-color: #ff8342;}
+.me .inner ul.list > li .more i {margin-left: 10px; color: #ff8342;}

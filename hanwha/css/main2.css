@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Noto+Sans+KR&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+.wrap {position: relative;}
+header {position: fixed; width: 100%; background-color: rgba(2,2,2,0.19); }
+header .innerheader {display: flex; justify-content: space-between; padding: 30px 100px; color: #fff;}
+header .innerheader .gnb {display: flex; justify-content: space-between; width: 30%; align-items: center;}
+header .innerheader .tnb {display: flex; justify-content: space-between;  width: 30%; align-items: center;}
+.tnb li:last-child {border: 1px solid #fff; padding: 8px; border-radius: 20px;}
+
+.visual {background: url(../img/vis_4.jpg) no-repeat center/cover; height: 1000px; }
+.visual .tit {width: 1000px;  margin: 0 auto; text-align: center; color: #fff; padding-top: 300px; }
+.tit h2 {font-size: 50px; margin-bottom: 20px; }
+.tit p {font-size: 23px; margin-bottom: 50px;}
+.tit a {font-size: 18px; border: 1px solid #fff; padding: 10px 45px; border-radius: 20px; cursor: pointer;}
+
+
+.about {width: 80%; margin: 0 auto; padding: 130px 0;}
+.about .tit {text-align: center;}
+.about .tit h2 {font-size: 40px; font-weight: lighter;}
+.about .tit p {font-size: 18px; line-height: 1.5;}
+.about .tit span {color: orange;}
+.about .txt {display: flex; justify-content: space-between; margin: 0 65px;}
+.about .txt h3 {font-size: 22px; margin-top: 30px;}
+.about .txt p {font-size: 18px; margin: 15px 0;}
+.about .txt a {font-weight: bold;}
+.about .txt p  {overflow: hidden; display: block; }
+.about .txt p img {transition: all 0.5s;  display: block; }
+
+.about .txt p:hover img {transform: scale(1.3);transition: all 0.5s; }
+
+.product {width: 80%; margin: 0 auto; padding: 130px 0;}
+.product .tit {text-align: center;}
+.product .tit h2 {font-size: 40px; font-weight: lighter;}
+.product .tit p {font-size: 18px; line-height: 1.5;}
+.product .tit span {color: orange;}
+.product .txtbox {background: url(../img/product_1.jpg) no-repeat center/cover; width: 100%; height: 550px; padding: 20px; }
+.product .txtbox h3 {font-size: 20px; background-color: #fff; padding: 20px;}
+.product .txtbox span {color: orange;}
+.product .innerbox {padding: 20px 50px; background-color: gray; display: flex; justify-content: space-between;}
+.product .innerbox a {color: #fff; padding: 10px 20px; background-color: orange; border-radius: 20px; text-align: center;}

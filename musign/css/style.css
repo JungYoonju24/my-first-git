@@ -1,0 +1,153 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+KR&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+body {font-family: 'Noto Sans KR', sans-serif; font-size: 14px; color: #333;}
+body.on {background-color: #e8fcff; transition: all 0.4s;}
+.wrap {position: relative; margin: auto; overflow: hidden;}
+.en {font-family: 'handel gothic', sans-serif;}
+.en_s {font-family: 'Dancing Script', cursive;}
+
+.innerheader {max-width: 90%; margin: 0 auto; height: 110px; line-height: 110px; display: flex; justify-content: space-between;}
+.innerheader .logo a {display: block; width: 100%; height: 100%;}
+.innerheader .mainmenu {width: 50%; display: flex; justify-content: space-between; position: relative; }
+.innerheader .mainmenu .bar {position: absolute; left: 0; bottom: 40px; width: 0%; height: 3px; background-color: #333; transition: all 0.4s;}
+.innerheader .mainmenu .gnb {display: flex; width: 50%; }
+.innerheader .mainmenu .gnb li {margin: 0 20px;}
+.innerheader .mainmenu .sns {display: flex; width: 25%;}
+.innerheader .mainmenu .sns li {width: 25%; text-align: right;}
+
+/* 공통요소 */
+.tit {font-size: 50px; }
+.tit span {display: block;}
+.tit span b {font-weight: normal; overflow: hidden;}
+.tit span.en_s {font-size: 22px; font-weight: normal;}
+.tit span.gray {color: #ccc;}
+.txt p {counter-reset: #888; line-height: 1.6; margin-bottom: 10px;}
+.txt p b {font-weight: normal; overflow: hidden;}
+.morebtn {display: inline; color: #333; position: relative; padding-left: 45px; transform: skewX(-12deg) translateX(5px);  transition: all 0.15s;}
+.morebtn::before {content: ''; background-color: #333; width: 42px; height: 1px; position: absolute; left: 0; top: 54%;} 
+.morebtn:hover, .morebtn:focus {transform: skewX(0deg) translateX(0px);}
+.inner {width: 1320px; margin: auto; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.inner .box {width: 50%; }
+
+.visual {max-width: 90%; margin: auto; display: flex; }
+.visual .mainimg {width: 50%;}
+.visual .mainimg img {width: 90%;}
+.visual .maintxt {width: 50%; margin-top: 180px;}
+.visual .maintxt .tit {font-size: 72px;}
+.visual .maintxt .txt { padding: 50px 0 0 70px;}
+
+.journal {position: relative; padding: 190px 0 120px;}
+.journal .scroll {position: absolute; left: 50%; top: -20px; transform: translateX(-50%); text-transform: uppercase; font-size: 10px; letter-spacing: 5px; writing-mode: vertical-lr; padding-top: 90px; }
+.journal .scroll::before {content: ''; position: absolute; height: 75px; width: 1px; background-color: #333; top: 0; left: 6px;} 
+.journal .box img {padding-top: 100px;}
+.journal .box .tit {margin-bottom: 40px;}
+.journal .box ul {border-top: 1px solid #e6e6e6; padding-top: 40px;}
+.journal .box ul li {margin-bottom: 30px; display: flex;}
+.journal .box ul li h3 {width: 22%; font-size: 15px;}
+.journal .box ul li p {color: #888;}
+
+.service {padding: 190px 0;}
+.service .inner .box .img {margin-top: 60px;}
+.service .inner .box.design {width: 45%; margin-top: -40%; border-top: 1px solid #c4e5ea; padding-top: 60px;}
+.service .inner .box.design .tit b {font-size: 30px; line-height: 1.4; margin-bottom: 20px; }
+
+
+.customer {background: url(../img/img_04.jpg) no-repeat center/cover; padding: 160px; text-align: center;}
+.customer .tit {color: #fff; font-size: 40px; margin-bottom: 10px;}
+.customer .txt {color: #777; }
+
+.team {padding: 190px 0 ; position: relative;}
+.team .inner .box.left {text-align: right; padding-right: 80px;}
+.team .inner .box .tit {margin-top: 40px; }
+.team .inner .box .img {margin-top: 100px;}
+.team .inner .box .txt {margin: 30px 0;}
+
+footer {width: 1320px; margin: auto;}
+footer .top .tit {text-align: center; color: #e6e6e6; font-size: 62px; margin-bottom: 40px;}
+footer .bottom {border-top: 1px solid #e6e6e6; padding: 40px 0 100px;}
+footer .bottom ul {display: flex; justify-content: space-between; flex-wrap: wrap;}
+footer .bottom ul li {width: 23%; color: #aaa; font-size: 12px; line-height: 2;}
+footer .bottom ul li b {color: #000; font-weight: normal; font-size: 14px ; display: inline-block; margin-bottom: 12px;}
+footer .bottom ul li:first-child {width: 31%; font-size: 28px; color: #000; line-height: 1.1;}
+footer .bottom ul li b:first-child {display: inline-block; margin-bottom: 12px;}
+footer .bottom ul li:nth-child(3) {line-height: 1.2;}
+
+/* circle box */
+.circlebox {transform: rotate(-90deg);}
+.circlebox .svgAni path {stroke: #f5f5f5; stroke-width: 25; fill: none; stroke-dashoffset: 0; stroke-dasharray: 1560;}
+/* dashoffset 점선 - - - -  시작점 0으로 주기*/
+/* dasharray 점선 배열 (길이) 한점에 대한 길이*/
+@keyframes dash {
+    0% {stroke-dashoffset: 1564;}
+    100% {stroke-dashoffset: 0;}
+}
+.circlebox.motion .svgAni path {animation-name: dash; animation-duration: 1.5s;}
+.journal .circlebox.motion {position: absolute; right: 13%; top: 100px; z-index: -1;}
+.team .circlebox.motion {position: absolute; right: 20%; top: -50px; z-index: -1;}
+
+
+@keyframes textani {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translate3d(0,40px,0) skewY(8deg); transform-origin: top left;}
+}
+
+.tit.motion span {transform: translate3d(0,0,0) skewY(0deg); overflow: hidden;}
+.tit.motion span b {display: block; animation-name: textani; animation-duration: 1.3s;}
+
+.txt.motion p {transform: translate3d(0,0,0) skewY(0deg); overflow: hidden;}
+.txt.motion p b {display: block; animation-name: textani; animation-duration: 1s;}
+
+
+@keyframes imgani {
+    0% {transform: translateY(50px);}
+}
+.img.motion {animation-name: imgani; animation-duration: 1s;}
+
+.img.motion::after {content: ''; width: 100%; height: 0%; background-color: #fff; position: absolute; top: 0; left: 0; animation-name: mask; animation-duration: 1.2s;}
+@keyframes mask {
+    0% {height: 90%;}
+}
+.service .img.motion::after {background-color: #e8fcff;}
+
+/* 메뉴 네모버튼 */
+.menuopen button.open {position: fixed; right: 0; top: 50%; transform: translateY(-50%); border: none; padding: 30px 22px; background: none; z-index: 200;}
+.menuopen button.open::before {content: ''; width: 100%; height: 100%; background-color: #f5f5f5; position: absolute; top: 0; right: 0; z-index: -1; transition: all 0.5s;}
+.menuopen button.open:hover::before, .menuopen button.open:focus::before {right: 0; cursor: pointer;}
+
+/* 메뉴 텍스트 줄 효과 */
+.menuopen .menuwrap {width: 100%; background-color: #eee; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100;}
+.menuopen .menuwrap .tit {color: #ccc; position: absolute; top: 50%; left: 25%; transform: translateY(-50%); font-size: 60px;} 
+.menuopen .menuwrap .tit a {display: inline-block; margin-bottom: 20px; position: relative; transition: all 0.3s;}
+.menuopen .menuwrap .tit a::after {position: absolute; left: 0; bottom: -5px; width: 0%; height: 2px; background-color: #333; content: ''; transition: all 0.3s; }
+.menuopen .menuwrap .tit a:hover:after, .menuopen .menuwrap .tit a:focus:after {width: 100%;}
+.menuopen .menuwrap .tit a:hover, .menuopen .menuwrap .tit a:focus {transform: translateX(30px); color: #333;}
+
+/* 메뉴 엑스,close버튼, 원형배경 */
+.menuopen .menuwrap .close:nth-child(1) {position: absolute; top: 50%; transform: translateY(-50%); left: 30px;}
+.menuopen .menuwrap .close.en {position: absolute; right: 50px; top: 50px; font-size: 25px; border-bottom: 1px solid #888; color: #888;}
+.menuopen .menuwrap::before {content: ''; width: 700px; height: 700px; background-color: #fff; border-radius: 50%; position: absolute; left: 30%; top: 50%; transform: translateY(-50%);}
+.menuopen .menuwrap {width: 0; opacity: 0; transform: skewY(40deg); transition: all 0.3s;}
+.menuopen .menuwrap.on {width: 100%; opacity: 1; transform: skewY(0deg); transition: all 0.5s; }
+
+/* .menuwrap .tit 애니메이션 진행 늦추기 */
+.menuopen .menuwrap ul {display: none;}
+.menuopen .menuwrap.on ul {display: block;}
+.menuopen .menuwrap.on::before {animation-name: menuwrap2; animation-duration: 1.8s;}
+
+@keyframes menuwrap2 {
+    0% {opacity: 0;}
+    40% {opacity: 0; transform: translateY(-50%) scale(0.5);}
+}

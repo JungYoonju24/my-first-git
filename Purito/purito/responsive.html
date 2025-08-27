@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purito 클론코딩</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script src="js/splitting.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="innerheader">
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="product">Product <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <div class="gnbinner">
+                            <ul class="gnblist">
+                                <li>
+                                    <h3>Product</h3>
+                                    <ul>
+                                        <li><a href="#">All Products</a></li>
+                                        <li><a href="#">Best Sellers</a></li>
+                                        <li><a href="#">New Arrivals</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Product Type</h3>
+                                    <ul>
+                                        <li><a href="#">Cleanser</a></li>
+                                        <li><a href="#">Toner & Essence</a></li>
+                                        <li><a href="#">Serum</a></li>
+                                        <li><a href="#">Moisturizer</a></li>
+                                        <li><a href="#">Sun Care</a></li>
+                                        <li><a href="#">Makeup</a></li>
+                                        <li><a href="#">Special Care</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Skin Concern</h3>
+                                    <ul>
+                                        <li><a href="#">Redness & Sensitivity</a></li>
+                                        <li><a href="#">Weakened Skin Barrier</a></li>
+                                        <li><a href="#">Dryness</a></li>
+                                        <li><a href="#">Breakouts & Acne</a></li>
+                                        <li><a href="#">Fine Lines & Wrinkles</a></li>
+                                        <li><a href="#">Dullness & Uneven Tone</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Ingredient Line</h3>
+                                    <ul>
+                                        <li><a href="#">Centella Asiatica</a></li>
+                                        <li><a href="#">Deep Sea Water</a></li>
+                                        <li><a href="#">Hydrangea</a></li>
+                                        <li><a href="#">Bamboo</a></li>
+                                        <li><a href="#">StarFlower</a></li>
+                                        <li><a href="#">Minari</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="right">
+                                <img src="img/gnb-banner-2.jpg" alt="">
+                                <div class="txt">
+                                    <h2>10-Second Rapid Soothing</h2>
+                                    <a href="#"><p>Shop Now</p></a>
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Brand Story</a></li>
+                </ul>
+                <ul class="tnb">
+                    <li>
+                        <a href="#">Community <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="tnbinner">
+                            <li><a href="#">Create Me</a></li>
+                            <li><a href="#">News&Press</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Help <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                        <ul class="tnbinner">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Stores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-search icon-search" aria-hidden="true"></i></a></li>
+                    <li>
+                        <a href="#"><i class="fa fa-globe icon-globe" aria-hidden="true"></i></a>
+                        <ul class="tnbinner last">
+                            <li><a href="#">ENG</a></li>
+                            <li><a href="#">KOR</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="mob">
+                <a href="#" class="logo">
+                    <span>Purito</span>
+                    <p>SEOUL</p>
+                </a>
+                <ul class="icon">
+                    <li><a href="#"><i class="fa fa-search icon-search" aria-hidden="true"></i></a></li>
+                    <li>
+                        <a href="#"><i class="fa fa-globe icon-globe" aria-hidden="true"></i></a>
+                        <ul class="tnbinner last">
+                            <li><a href="#">Eng</a></li>
+                            <li><a href="#">Kor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-bars icon-bars" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <nav class="mobmenu">
+                <a href="#" class="icon"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <ul class="top">
+                    <li>
+                        <a href="#">Product</a>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i> </li>
+                    <li><a href="#">Ingredients</a></li>
+                    <li><a href="#">Brand story</a></li>
+                    <li>
+                        <a href="#">Community</a>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i> </li>
+                    <li>
+                        <a href="#">Help</a>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i> </li>
+                </ul>
+                <div class="bottom">
+                    <img src="img/gnb-banner-2.jpg" alt="">
+                    <div class="txt">
+                        <h2>10-Second Rapid Soothing</h2>
+                        <a href="#"><p>Shop Now</p></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="visual">
+            <div class="maintxt">
+                <h2>Purito</h2>
+                <h3>SEOUL</h3>
+            </div>
+        </section>
+        <section class="video">
+            <div class="vimeo">
+                <iframe src="https://player.vimeo.com/video/997621441?quality=1080p&muted=1&autoplay=1&autopause=0&loop=1&background=1" frameborder="0"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        <section class="best animate" data-animate="motion">
+            <div class="inner">
+                <h2 class="best">Discover our ( Best ) Sellers</h2>
+                <div class="imgbox">
+                    <img src="img/Panthenol-Cream_Best_pc.jpg" alt="">
+                    <div class="txt">
+                        <h3>Top Selling Skin Barrier Savior</h3>
+                        <h2>Mighty Bamboo Panthenol Cream</h2>
+                        <p>Rebuild and repair your skin barrier to reveal its radiant glow.</p>
+                        <a href="#"><span class="left">(</span> Shop Now <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="right">)</span></a>
+                    </div>
+                </div>
+                <ul class="list">
+                    <li class="one">
+                        <div class="imgwrap">
+                            <img class="default" src="img/Panthenol-Cream-thumb-1-1.png" alt="">
+                            <img class="hover" src="img/Panthenol-Cream-thumb-hover.jpg" alt="">
+                        </div>
+                        <h3>Mighty Bamboo Panthenol Cream</h3>
+                        <p>$ 23.00</p>
+                    </li>
+                    <li class="two">
+                        <div class="imgwrap">
+                            <img class="default" src="img/centella_serum_unscented-thumb-x2.png" alt="">
+                            <img class="hover" src="img/centella_serum_unscented-hover.jpg" alt="">
+                        </div>
+                        <h3>Wonder Releaf Centella Serum Unscented</h3>
+                        <p>$ 23.00</p>
+                    </li>
+                    <li class="three">
+                        <div class="imgwrap">
+                            <img class="default" src="img/oat_gel_cream-thumb-2.png" alt="">
+                            <img class="hover" src="img/Oat-in-Calming-Gel-Cream-hover-596x596.jpg" alt="">
+                        </div>
+                        <h3>Oat-in Calming Gel Cream</h3>
+                        <p>$ 16.00</p>
+                    </li>
+                    <li class="four">
+                        <div class="imgwrap">
+                            <img class="default" src="img/sunscreen-thumb-1.png" alt="">
+                            <img class="hover" src="img/sunscreen-thumb-hover.jpg" alt="">
+                        </div>
+                        <h3>Daily Soft Touch Sunscreen SPF50+ PA++++</h3>
+                        <p>$ 21.50</p>
+                    </li>
+                    <li class="five">
+                        <div class="imgwrap">
+                            <img class="default" src="img/Panthenol-Serum-thumb-1.png" alt="">
+                            <img class="hover" src="img/Panthenol-Serum-thumb-hover.png" alt="">
+                        </div>
+                        <h3>Mighty Bamboo Panthenol Serum</h3>
+                        <p>$ 22.00</p>
+                    </li>
+                    <li class="six">
+                        <div class="imgwrap">
+                            <img class="default" src="img/Panthenol-Cleanser-thumb-1.png" alt="">
+                            <img class="hover" src="img/Panthenol-Cleanser-thumb-hover.jpg" alt="">
+                        </div>
+                        <h3>Mighty Bamboo Panthenol Cleanser</h3>
+                        <p>$ 14.00</p>
+                    </li>
+                    <li class="seven">
+                        <div class="imgwrap">
+                            <img class="default" src="img/Best-Kit-thumb-1.png" alt="">
+                            <img class="hover" src="img/Best-Kit-thumb-1.png" alt="">
+                        </div>
+                        <h3>Purito Seoul Best Kit</h3>
+                        <p>$ 25.00</p>
+                    </li>
+                    <li class="eight">
+                        <div class="imgwrap">
+                            <img class="default" src="img/centella_minikit_unscented-new.png" alt="">
+                            <img class="hover" src="img/centella_minikit_unscented-texture.png" alt="">
+                        </div>
+                        <h3>Wonder Releaf Centella Mini Kit Unscented</h3>
+                        <p>$ 17.20</p>
+                    </li>
+                    <li class="nine">
+                        <div class="imgwrap">
+                            <img class="default" src="img/BB-Cream-thumb-1-1.png" alt="">
+                            <img class="hover" src="img/BB-Cream-thumb-hover.png" alt="">
+                        </div>
+                        <h3>Wonder Releaf Centella BB Cream SPF30 PA+++</h3>
+                        <p>$ 14.00</p>
+                    </li>
+                    <li class="ten">
+                        <div class="imgwrap">
+                            <img class="default" src="img/Body-lotion-thumb-1.png" alt="">
+                            <img class="hover" src="img/Body-lotion-thumb-hover.png" alt="">
+                        </div>
+                        <h3>Luminous Moisture Shea Butter Body Lotion</h3>
+                        <p>300 mL/$ 25.00</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="ingredients">
+            <div class="inner">
+                <div class="txt">
+                    <h2 class="txt1">
+                        Driven by a <span class="highlight animate" data-animate="motion motion1">passion</span> for <br>
+                        <span class="highlight animate" data-animate="motion motion2">exploration</span>,<br>
+                    </h2>
+                    <h2 class="txt2">
+                        we search the <span class="highlight animate" data-animate="motion motion3">Korean Peninsula</span><br>
+                        for the finest natural <span class="redtxt">ingredients</span>.
+                    </h2>
+                </div>
+                <div class="box">
+                    <div class="left">
+                        <ul class="background">
+                            <li class="active">
+                                <img src="img/main-ingredient-centella-bg.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="img/main-ingredient-deepsea-bg.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="img/main-ingredient-Hydrangea-bg.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="img/main-ingredient-bamboo-bg.png" alt="">
+                            </li>
+                        </ul>
+                        <ul class="txt">
+                            <li class="list animate" data-animate="motion">
+                                <p>Powerful Soothing</p>
+                                <h2>Korean Centella Asiatica</h2>
+                            </li>
+                            <li class="list animate" data-animate="motion">
+                                <p>Weightless Hydration</p>
+                                <h2>Deep Sea Water</h2>
+                            </li>
+                            <li class="list animate" data-animate="motion">
+                                <p>Timeless Well-Aging</p>
+                                <h2>Jeju Hydrangea</h2>
+                            </li>
+                            <li class="list animate" data-animate="motion">
+                                <p>Barrier Strengthening</p>
+                                <h2>Damyang Bamboo</h2>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <ul class="background">
+                            <li class="active">
+                                <img src="img/main-ingredient-centella-img.jpg" alt="">
+                                <p>Harvested across Korean terrains, <br>Centella is known for its remarkable soothing benefits.</p>
+                            </li>
+                            <li>
+                                <img src="img/main-ingredient-deepsea-img.jpg" alt="">
+                                <p>Sourced from Korea's East Sea, <br>Deep Sea Water provides mineral-rich hydration.</p>
+                            </li>
+                            <li>
+                                <img src="img/main-ingredient-Hydrangea-2.jpg" alt="">
+                                <p>Harvested from the enchanting Jeju Island, <br>Hydrangea holds the secret to timeless skin elasticity and wrinkle control.</p>
+                            </li>
+                            <li>
+                                <img src="img/main-ingredient-bamboo-img.png" alt="">
+                                <p>Damyang-sourced Bamboo Extract contains <br>many of the body's amino acids & minerals to fortify the skin barrier.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobbox">
+                    <ul class="top">
+                        <li>
+                            <img src="img/main-ingredient-centella-bg.jpg" alt="">
+                            <div class="tit">
+                                <p>Powerful Soothing</p>
+                                <h2>Korean Centella Asiatica</h2>
+                            </div>
+                            <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <img src="img/main-ingredient-deepsea-bg.jpg" alt="">
+                            <div class="tit">
+                                <p>Weightless Hydration</p>
+                                <h2>Deep Sea Water</h2>
+                            </div>
+                            <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="bottom">
+                        <li>
+                            <img src="img/main-ingredient-Hydrangea-bg.jpg" alt="">
+                            <div class="tit">
+                                <p>Timeless Well-Aging</p>
+                                <h2>Jeju Hydrangea</h2>
+                            </div>
+                            <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <img src="img/main-ingredient-bamboo-bg.png" alt="">
+                            <div class="tit">
+                                <p>Barrier Strengthening</p>
+                                <h2>Damyang Bamboo</h2>
+                            </div>
+                            <a href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="subtxt">
+                    <span class="left">(</span> Discover Ingredients <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="right">)</span>
+                </a>
+            </div>
+        </section>
+        <section class="new animate" data-animate="motion">
+            <div class="inner">
+                <div class="imgbox">
+                    <img src="img/New-Arrivals_SAS_pc.jpg" alt="">
+                    <div class="txt">
+                        <h2>The smoothest touch you'll ever feel.</h2>
+                        <p>An everyday Korean sunscreen shields your skin with broad spectrum SPF 50, <br>gliding on somoothly with the softest texture.</p>
+                        <a href="#"><span class="left">( </span> Get Yours Now <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="right"> )</span></a>
+                    </div>
+                </div>
+                <div class="box">
+                    <h3>New Arrivals</h3>
+                </div>
+            </div>
+        </section>
+        <div class="marquee">
+            <div class="marqueeinner">
+                <span>Korean Green Miracle Korean Green Miracle </span>
+                <span>Korean Green Miracle Korean Green Miracle </span>
+                <span>Korean Green Miracle Korean Green Miracle </span>
+                <span>Korean Green Miracle Korean Green Miracle </span>
+            </div>
+        </div>
+        <section class="skincare animate" data-animate="motion">
+            <div class="inner">
+                <img src="img/main-sensorial.jpg" alt="">
+                <div class="txt">
+                    <h2>Sensorial Skincare</h2>
+                    <p>Meticulously crafted, our skincare products are designed to deliver not only exceptional results but also a delightful and exciting sensorial experience.</p>
+                </div>
+            </div>
+        </section>
+        <section class="touch">
+            <ul class="slider">
+                <li>
+                    <img src="img/main-brandstory-01.jpg" alt="">
+                    <div class="txt seoul">
+                        <h2>Touch Your ( Seoul )</h2>
+                        <h3>Where Our Inspiration Blooms</h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/main-brandstory-02.jpg" alt="">
+                    <div class="txt urbanity">
+                        <h2>Touch Your ( Urbanity )</h2>
+                        <h3>N Seoul Tower <span>N서울타워</span></h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/main-brandstory-03.jpg" alt="">
+                    <div class="txt nature">
+                        <h2>Touch Your ( Nature )</h2>
+                        <h3>Seoul Forest Park <span>성수 서울숲</span></h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/main-brandstory-04.jpg" alt="">
+                    <div class="txt life">
+                        <h2>Touch Your ( Life )</h2>
+                        <h3>Yeouido Hangang Park <span>여의도 한강 공원</span></h3>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/main-brandstory-last-bg.jpg" alt="">
+                    <div class="lasttxt">
+                        <h2>Touch Your ( Seoul )</h2>
+                        <h3>We explore the rich culture and boundless <br>creativity of Seoul, <br>
+                        where nature and urbanity thrive in harmony.</h3>
+                        <a href="#"><span class="left">( </span> Learn More <i class="fa fa-angle-right" aria-hidden="true"></i> <span class="right">)</span> </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button></div>
+        </section>
+        <section class="follow">
+            <div class="inner">
+                <h2>
+                    Follow <br>
+                    our Seoul-full feed
+                </h2>
+               <div class="top">
+                    <div class="imgbox">
+                        <p class="img"><img src="img/main-insta-01.jpg" alt=""></p>
+                        <p class="img"><img src="img/main-insta-02.jpg" alt=""></p>
+                        <p class="img"><img src="img/main-insta-03.jpg" alt=""></p>
+                    </div>
+               </div>
+                <div class="bottom">
+                    <h3>follow us @purito_official</h3>
+                    <div class="imgbox2">
+                        <p class="img"><img src="img/main-insta-04.jpg" alt=""></p>
+                        <p class="img"><img src="img/main-insta-05.jpg" alt=""></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="info">
+            <div class="inner">
+                <div class="txt">
+                    <p>Purito Seoul is a contemporary Korean
+                    brand that draws inspiration from
+                    Korean ingredients and culture.</p>
+                </div>
+                <span class="left animate" data-animate="motion">(</span>
+                <div class="menu">
+                    <div class="top">
+                        <ul>
+                            <li>
+                                <h3>We are Purito Seoul</h3>
+                                <div class="list">
+                                    <a href="#"><span>About Us</span></a>
+                                    <a href="#"><span>Blog</span></a>
+                                    <a href="#"><span>News</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Products</h3>
+                                <div class="list">
+                                    <a href="#"><span>Best Seller</span></a>
+                                    <a href="#"><span>New Arrivals</span></a>
+                                    <a href="#"><span>All Products</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom">
+                        <ul>
+                            <li>
+                                <h3>Help</h3>
+                                <div class="list">
+                                    <a href="#"><span>FAQ</span></a>
+                                    <a href="#"><span>Contact Us</span></a>
+                                    <a href="#"><span>Stores</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="icon">
+                            <a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <span class="right animate" data-animate="motion">)</span>
+            </div>
+        </section>
+        <section class="mobinfo">
+            <div class="inner">
+                <div class="txt">
+                    <p>Purito Seoul is a contemporary Korean
+                    brand that draws inspiration from
+                    Korean ingredients and culture.</p>
+                </div>
+                <div class="menu">
+                    <div class="top">
+                        <ul>
+                            <li>
+                                <h3>We are Purito Seoul</h3>
+                                <div class="list">
+                                    <a href="#"><span>About Us</span></a>
+                                    <a href="#"><span>Blog</span></a>
+                                    <a href="#"><span>News</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <h3>Products</h3>
+                                <div class="list">
+                                    <a href="#"><span>Best Seller</span></a>
+                                    <a href="#"><span>New Arrivals</span></a>
+                                    <a href="#"><span>All Products</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom">
+                        <ul>
+                            <li>
+                                <h3>Help</h3>
+                                <div class="list">
+                                    <a href="#"><span>FAQ</span></a>
+                                    <a href="#"><span>Contact Us</span></a>
+                                    <a href="#"><span>Stores</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="icon">
+                            <a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="inner">
+                <p>ⓒ 2024 Purito. All right reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- ingredients 섹션 이미지 호버시 이미지 자동 전환 효과 스크립트 -->
+    <script>
+        const txtItems = document.querySelectorAll('.ingredients .left .txt li');
+        const leftImgs = document.querySelectorAll('.ingredients .left .background li');
+        const rightImgs = document.querySelectorAll('.ingredients .right .background li');
+      
+        txtItems.forEach((item, index) => {
+          item.addEventListener('mouseenter', () => {
+            // 모든 이미지에서 active 제거
+            leftImgs.forEach(img => img.classList.remove('active'));
+            rightImgs.forEach(img => img.classList.remove('active'));
+      
+            // 현재 hover한 순번의 이미지에 active 추가
+            leftImgs[index].classList.add('active');
+            rightImgs[index].classList.add('active');
+          });
+        });
+      </script>
+      <button class="topbtn">
+        <a href="#" class="gotop">
+            <svg class="icon1" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 80 80">
+            <path d="M17.6,13.6c12.6-13.7,32.2-13.7,44.8,0c0.1,0.2,0.4,0,0.3-0.2c-2.2-4-5.5-7.5-9.5-9.8 C41.1-4,24,0.9,17.3,13.5C17.2,13.6,17.5,13.8,17.6,13.6z"></path>
+            <path d="M66.5,17.3c-0.2-0.1-0.3,0.2-0.2,0.3c13.7,12.6,13.7,32.2,0,44.8c-0.2,0.1,0,0.4,0.2,0.3 c4-2.2,7.5-5.5,9.8-9.5C84,41.1,79.1,24,66.5,17.3L66.5,17.3z"></path>
+            <path d="M62.4,66.4c-12.6,13.7-32.2,13.7-44.8,0c-0.1-0.2-0.4,0-0.3,0.2c2.2,4,5.5,7.5,9.5,9.8 C38.9,84,56,79.1,62.7,66.5C62.8,66.3,62.5,66.2,62.4,66.4L62.4,66.4z"></path>
+            <path d="M13.6,17.6c0.2-0.1,0-0.4-0.2-0.3c-4,2.2-7.5,5.5-9.8,9.5C-4,38.9,0.9,56,13.5,62.7 c0.2,0.1,0.3-0.2,0.2-0.3C-0.1,49.8-0.1,30.2,13.6,17.6L13.6,17.6z"></path>
+            </svg>
+            <svg class="icon2" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 80 80">
+            <path d="M27.5,37.9C27.5,37.9,27.5,37.9,27.5,37.9C27.5,37.9,27.5,37.9,27.5,37.9c2.1,0.2,4.1,0.2,6.1-0.4 c3.2-1,5.2-3.8,5.2-7.1c0-2.3-1-4.2-2.8-5.6c-1.6-1.2-3.7-2-6-2H19.5c0,0,0,0,0,0.1c0.8,0.1,2.6,0.6,2.6,2.7v21.2 c0,2.3-1.8,2.6-2.6,2.7c0,0,0,0,0,0.1h9.3c0,0,0,0,0-0.1c-0.8-0.2-2.9-0.5-2.9-2.7V23.9l3.1,0c2.2,0,5.8,1,5.8,6.8 C34.9,34.9,32.4,37.8,27.5,37.9L27.5,37.9z"></path>
+            <path d="M32.2,59.9C32.2,60,32.2,60,32.2,59.9l9.4,0.1c0,0,0,0,0-0.1c-0.9-0.2-2.8-0.5-2.8-3V40.2h-0.3 l-6.5,2c0,0,0,0.1,0,0.1c2.1,0.2,3,1.3,3,2.9v11.7C35,59.4,33,59.8,32.2,59.9L32.2,59.9z"></path>
+            <path d="M42.7,43.4c0.9,0.1,1.2,0.5,1.9,0.7c0.7,0.2,1.4,0.2,2-0.2c1-0.6,1.3-2.3,1.3-2.3s-1.1-1.1-3.2-1.1 c-1.7,0-3.1,0.8-4.1,2.4c-0.5,0.9-0.7,1.9-0.7,1.9C40.7,43.4,42.1,43.3,42.7,43.4L42.7,43.4z"></path>
+            <path d="M60.1,35.9l0.4-1.2h-5.6v-5.6h-0.3c-1.3,2.8-3.7,6-6.7,6.7c0,0,0,0.1,0,0.1h3.2V49 c0,3.1,1.7,4.7,4.4,4.7c3.2,0,4.7-2.3,5-2.8c0,0,0-0.1,0,0c-0.8,0.4-1.7,0.6-2.6,0.6c-2.1,0-3-1.4-3-3.3V35.9L60.1,35.9L60.1,35.9z"></path>
+            </svg>
+            <svg class="icon3" xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 80 80">
+            <path d="M39.9,22.2C37,29,30.7,33.3,27.5,34.8c-0.1,0-0.1,0.2,0,0.2c6.3-0.3,11.7-5.7,12.4-6.4 c0,0,0.1,0,0.1,0c0.7,0.7,6.1,6.2,12.5,6.4c0.1,0,0.1-0.1,0-0.2c-7.5-3.6-11.4-9.7-12.5-12.6C40.1,22.2,39.9,22.2,39.9,22.2z"></path>
+            <path d="M38,59c0.8-12.2,0.8-19.4,1-32h2c0,12.4,1,32,1,32H38z"></path>
+            </svg>
+        </a>
+    </button>
+</body>
+</html>

@@ -331,6 +331,9 @@ $(function(){
 
 
 
+
+
+
 // journey
 $(function () {
   const journey = document.querySelector(".journey");
