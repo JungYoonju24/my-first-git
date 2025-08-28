@@ -800,7 +800,7 @@ padding: 0; margin: 0;}
 
 /* .con에 motion 붙으면 이미지 리빌 시작 (스태거는 --d 커스텀 속성으로) */
 .process .con.motion .imgbox img {
-  animation: revealImgUp 1s ease forwards;
+  animation: revealImgUp 1.7s ease forwards;
   animation-delay: var(--d, 0s);
 }
 
