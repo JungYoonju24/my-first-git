@@ -167,7 +167,6 @@ header .innerheader .menu a.d {margin-right: 0px;}
   gap: 25px;
   will-change: transform;
 }
-
 .some .imglist .draw { will-change: transform, opacity, filter; }
 .some .imglist img {
   width: 18.5vw;
@@ -176,8 +175,9 @@ header .innerheader .menu a.d {margin-right: 0px;}
   box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   transform-origin: center center;
   filter: brightness(90%);
+  transition: 0.3s;
 }
-
+.some .imglist img:hover {filter: brightness(100%);}
 
 /* 버튼 영역(선택) */
 .some .inner .button {
@@ -787,7 +787,7 @@ padding: 0; margin: 0;}
 .process .inner .con .text {font-size: 16px; font-weight: 200; line-height: 1.6; margin-top: 8px; color: #a3a3a3;}
 
 .process .inner .con .imgbox {width: 90%; margin: 0 auto;}
-.process .inner .con .imgbox img {width: 95%; filter: brightness(90%);}
+.process .inner .con .imgbox img {width: 98%; filter: brightness(90%);}
 .process .inner .con.ss .imgbox img {width: 70%;}
 
 
