@@ -707,8 +707,8 @@ padding: 0; margin: 0;}
 .works .inner .hover-target {display: block;}
 
 .works .inner .role {margin-top: 40px;}
-.works .inner .role .planning, .works .inner .role .design {display: flex; justify-content: space-between; border-bottom: 0.5px solid #fff;}
-.works .inner .role .coding, .works .inner .role .ai {display: flex; justify-content: space-between; border-bottom: 0.6px solid #fff;}
+.works .inner .role .planning, .works .inner .role .design {display: flex; justify-content: space-between; border-bottom: 0.5px solid #ffffff85;}
+.works .inner .role .coding, .works .inner .role .ai {display: flex; justify-content: space-between; border-bottom: 0.5px solid #ffffff85;}
 
 .works .inner .role .left {text-align: right; width: 30%;  padding: 45px 0;}
 .works .inner .role .title {font-size: 30px; font-weight: 500; margin-bottom: 8px;}
