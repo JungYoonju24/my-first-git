@@ -208,5 +208,5 @@ header {animation-name: slidedown; animation-duration: 3s;}
     .press .btn {display: none;}
     .press .top h2 {width: 100%;}
 
-    .recruit .left h2 {font-size: 28px; width: 100%; background-color: red;}
+    .recruit .left h2 {font-size: 28px; width: 100%;}
 }
