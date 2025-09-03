@@ -385,7 +385,8 @@ padding: 0; margin: 0;}
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 .glass-box:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.2);}
@@ -669,11 +670,39 @@ padding: 0; margin: 0;}
 
 .works .inner .bottom {font-size: 19px; color: #a3a3a3; line-height: 1.8; margin-bottom: 50px;}
 
-.works .inner .mainimg {width: 100%; position:relative; overflow:hidden;}
-.works .inner .mainimg img { filter: brightness(90%);}
-.works .inner .mainimg img, .works .inner .mainimg video {display:block; width:100%; height: 100%; border-radius:10px; object-fit: cover; inset: 0; backface-visibility: hidden;}
-.works .inner .mainimg video.preview {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover ;opacity: 0; transition: opacity 0.3s ease; pointer-events: auto;}
-.works .inner .hover-target:hover .mainimg video.preview{opacity:1; }
+.works .inner .mainimg{
+  width:100%;
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+  aspect-ratio:16/9; /* 너비:높이 비율 — 네 썸네일 비율로 맞춰줘 */
+}
+
+.works .inner .mainimg img,
+.works .inner .mainimg video{
+  display:block;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:0;
+  backface-visibility:hidden;
+  transform:translateZ(0);
+}
+
+.works .inner .mainimg img{filter:brightness(90%)}
+
+.works .inner .mainimg video.preview{
+  opacity:0;
+  transition:opacity .3s ease;
+  pointer-events:none;
+  will-change:opacity;
+  transform:translateZ(0) scale(1.002); /* 1px 라인 숨김 */
+}
+
+.works .inner .hover-target:hover .mainimg video.preview{opacity:1}
+
 
 .works .inner .hover-target {display: block;}
 
